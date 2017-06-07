@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Lista de Usuarios
+  a(href='/users/create') Agregar Usuario
+  if users
+    if users.length > 0
+      h2 Mostrar los usuarios
+      each user in users
+        p user.nickname
+    else
+      h2 Usuario que mostrar = 0
+  else
+    h2 No hay usuario que mostrar

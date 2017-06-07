@@ -1,0 +1,41 @@
+extends ../layout
+include ../mixins/form_input
+
+block content
+  .row
+    .col-sm-8.col-sm-offset-2
+      .panel.panel-info
+        .panel-heading
+          h1 Crear Usuario
+
+          if errors
+            h2 ERRORES
+            each error in errors
+              p= error
+
+          if user
+            h3 USUARIO TIENE DATOS
+            form(method='POST' action='/users/create')
+              +input_readonly('Id:', 'text', 'userId', '', null)
+              +input_required('Alias:', 'text', 'nickname', user.nickname, null)
+              +input_required('Nombre:','text', 'firstname', user.firstname, null)
+              +input_required('Apellido:','text', 'lastname', user.lastname, null)
+              +input_required('Fecha de nacimiento', 'date', 'birthdate', user.birthdate, null)
+              +input_required('Email:','email', 'email', user.email, null)
+              +input_required('Contraseña:','password', 'password', null, null)
+              +input_required('Repetir Contraseña:','password', 'password1', null, null)
+              button(type='reser') Limpiar
+              button(type='submit') Grabar
+          else
+            h3 USUARIO NO TIENE DATOS
+            form(method='POST' action='/users/create')
+              +input_readonly('Id:', 'text', 'userId', '', null)
+              +input_required('Alias:', 'text', 'nickname', null, null)
+              +input_required('Nombre:','text', 'firstname', null, null)
+              +input_required('Apellido:','text', 'lastname', null, null)
+              +input_required('Fecha de nacimiento', 'date', 'birthdate', null, null)
+              +input_required('Email:','email', 'email', null, null)
+              +input_required('Contraseña:','password', 'password', null, null)
+              +input_required('Repetir Contraseña:','password', 'password1', null, null)
+              button(type='reser') Limpiar
+              button(type='submit') Grabar
