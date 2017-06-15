@@ -1,4 +1,0 @@
-
-Encriptar el password (actualmente la funcion solo agrega a1 a la clave) en control.users.encryptPassword
-Crear el usuario administrador al momento de crear la tabla users en la base de datos (para poder ingresar al programa)
-Verificar que para listar usuarios (ruta /users) y crear usuarios (ruta: /users/create) sea un administrador

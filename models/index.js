@@ -1,3 +1,6 @@
+/**
+ * Modelo para generar to da la base de datos
+ */
 'use strict';
 
 var fs = require('fs');

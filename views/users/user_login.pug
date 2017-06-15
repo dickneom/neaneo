@@ -1,0 +1,10 @@
+include ../mixins/form_input
+
+block content
+  form(method='POST' action='/users/create')
+    +input_required('Email:','email', 'email', user.email, null)
+    +input_required('Contraseña:','password', 'password', null, null)
+    +input_required('Repetir Contraseña:','password', 'password1', null, null)
+    button(type='submit') Grabar
+    a(href='') Recuperar Contraseña
+    a(href='') Registrarse
