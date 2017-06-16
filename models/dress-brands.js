@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         classMethods: {
             associate: function (models) {
                 // Una marca tiene  muchos vetidos
-                Brand.hasMany(models.Dress)
+                // Brand.hasMany(models.Dress)
             }
         }
     });

@@ -3,20 +3,20 @@
  */
 module.exports = function (sequelize, DataTypes) {
     var Color = sequelize.define('Color', {
-        color: {type: DataTypes.STRING},
-        active: {type: DataTypes.BOOLEAN}
+        color: { type: DataTypes.STRING },
+        active: { type: DataTypes.BOOLEAN }
     }, {
-        tableName: 'dresses-color',
-        underscored: true,
-        timestamps: false,
-        paranoid: false,
-        classMethods: {
-            associate: function (models) {
-                // Un color tiene muchos vestidos
-                Color.hasMany(models.Dress)
+            tableName: 'dresses-colors',
+            underscored: true,
+            timestamps: false,
+            paranoid: false,
+            classMethods: {
+                associate: function (models) {
+                    // Un color tiene muchos vestidos
+                    // Color.hasMany(models.Dress)
+                }
             }
-        }
-    });
-    
-    return  Color;
+        });
+
+    return Color;
 }

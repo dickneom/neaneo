@@ -17,12 +17,18 @@ module.exports = function (sequelize, DataTypes) {
             underscored: true,
             classMethods: {
                 associate: function (models) {
-                    // Un vestido tiene un usuario
+                    // Un vestido pertenece un usuario
                     Dress.belongsTo(models.User)//,
-                    // Un vestido tiene un color
-                    //Dress.belongsTo(models.Color),
-                    // Un vestido tiene una marca
-                    //Dress.belongsTo(models.Brand)
+                    // Un vestido es de un color
+                    // Dress.belongsTo(models.Color),
+                    // Un vestido es de una marca
+                    // Dress.belongsTo(models.Brand),
+                    // Un vestido pertenece una categoria, debe cambiarse a varias categorias
+                    // Dress.belongsTo(models.Brand),
+                    // Un vestido tiene muchas fotos
+                    // Dress.hasMany(models.Photo),
+                    // Un vestido tiene un estado
+                    // Dress.hasOne(models.State)
                 }
             }
         });
