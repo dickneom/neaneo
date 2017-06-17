@@ -10,14 +10,9 @@ module.exports = function (sequelize, DataTypes) {
             tableName: 'dresses-states',
             underscored: true,
             timestamps: false,
-            paranoid: false,
-            classMethods: {
-                associate: function (models) {
-                    // Un estado tiene muchos vestidos
-                    // State.hasMany(models.Dress)
-                }
-            }
-        });
+            paranoid: false
+        }
+    );
 
     return State;
 }

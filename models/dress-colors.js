@@ -9,14 +9,9 @@ module.exports = function (sequelize, DataTypes) {
             tableName: 'dresses-colors',
             underscored: true,
             timestamps: false,
-            paranoid: false,
-            classMethods: {
-                associate: function (models) {
-                    // Un color tiene muchos vestidos
-                    // Color.hasMany(models.Dress)
-                }
-            }
-        });
+            paranoid: false
+        }
+    );
 
     return Color;
 }

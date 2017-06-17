@@ -35,14 +35,9 @@ module.exports = function (sequelize, DataTypes) {
                     }
                     return fullname;
                 }
-            },
-            classMethods: {
-                associate: function (models) {
-                    // Un usuario tiene muchos vestidos
-                    User.hasMany(models.Dress);
-                }
             }
-        });
+        }
+    );
 
     return User;
 }

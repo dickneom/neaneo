@@ -35,6 +35,27 @@ Object.keys(db).forEach(function (modelName) {
   }
 });
 
+// Relacion entre vestidos y usuarios
+// Un Usuario tiene mucho vestidos
+// Un vestido tiene un usuario
+db.User.hasMany(db.Dress);
+db.Dress.belongsTo(db.User);
+
+// Relacion entre vestidos y marcas
+db.Dress.belongsTo(db.Brand);
+
+// Relacion entre vestidos y categorias
+db.Dress.belongsTo(db.Catego);
+
+// Relacion entre vestidos y colores
+db.Dress.belongsTo(db.Color);
+
+// Relacion entre vestidos y las fotos
+db.Dress.hasMany(db.Photo);
+
+// Relación entre vestidos y sus estados
+db.Dress.belongsTo(db.State);
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

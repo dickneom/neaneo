@@ -7,17 +7,12 @@ module.exports = function (sequelize, DataTypes) {
         photo: { type: DataTypes.BLOB },
         description: { type: DataTypes.STRING }
     }, {
-            tableName: 'dresses-categos',
+            tableName: 'dresses-photos',
             underscored: true,
-            timestamps: false,
-            paranoid: false,
-            classMethods: {
-                associate: function (models) {
-                    // Una foto pertenece a un vestido
-                    // Photo.belongsTo(models.Dress)
-                }
-            }
-        });
+            timestamps: true,
+            paranoid: true
+        }
+    );
 
     return Photo;
 }
